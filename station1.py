@@ -30,7 +30,7 @@ def on_connect(client, userdata, flags, rc):
         print("Bad connection Returned code=",rc)
 
 def main(): 
-	mqtt.Client.connected_flag=False
+	
 	#Broker value 127.0.0.1 if in local, demo.thingsboard.io in livedemo version. Port 1883 for the MQTT connection
 	broker="demo.thingsboard.io"
 	port=1883
@@ -41,6 +41,7 @@ def main():
 	#one key for each sensor
 	key=["temperature", "humidity", "wind_direction", "wind_intensity", "rain_height"]
 	
+	mqtt.Client.connected_flag=False
 	
 	if id_client !="" :
 		client = mqtt.Client()
