@@ -12,7 +12,7 @@ def on_connect(client, userdata, flags, rc):
         print("Bad connection Returned code=",rc)
         
 def tb_publish(dev_id, msg):
-	
+	#One connecttion per message
 	#Broker value 127.0.0.1 if in local, demo.thingsboard.io in livedemo version. Port 1883 for the MQTT connection
 	broker="demo.thingsboard.io"
 	port=1883
@@ -64,7 +64,7 @@ def on_message_local(client, userdata, message):
 def on_connect_local(client, userdata, flags, rc):
 	
 	print("Connected with result code "+str(rc))
-	local_broker.subscribe("sensor/data")
+	local_broker.subscribe("sensor/data")  #same of riot topic
 	
 if __name__ == "__main__":
 	
