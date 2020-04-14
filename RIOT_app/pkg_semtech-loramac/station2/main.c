@@ -27,6 +27,7 @@
 #include "net/loramac.h"
 #include "semtech_loramac.h"
 #include <time.h>
+#include "xtimer.h"
 
 semtech_loramac_t loramac;
 
@@ -49,19 +50,21 @@ int data_gen(char* data_sens)
 	return 0;
 }
 
-static int _cmd_loramac_data_transmission(int argc, char **argv)
+static int loramac_data_transmission(int argc, char **argv)
 {
 	 if (argc < 2) {
 		printf("start function");
 	}
-	uint8_t cnf = LORAMAC_DEFAULT_TX_MODE;  /* Default: confirmable */
-	uint8_t port = LORAMAC_DEFAULT_TX_PORT; /* Default: 2 */
-
-	semtech_loramac_set_tx_mode(&loramac, cnf);
-	semtech_loramac_set_tx_port(&loramac, port);
-
-	char data_sens[128];
+	
 	while (1){
+		xtimer_sleep(10)
+		uint8_t cnf = LORAMAC_DEFAULT_TX_MODE;  /* Default: confirmable */
+		uint8_t port = LORAMAC_DEFAULT_TX_PORT; /* Default: 2 */
+
+		semtech_loramac_set_tx_mode(&loramac, cnf);
+		semtech_loramac_set_tx_port(&loramac, port);
+
+		char data_sens[128];
 		//argv[2] is the msg  payload
 		data_gen(data_sens);
 		argv[2]=data_sens;
@@ -109,20 +112,9 @@ static int _cmd_loramac_data_transmission(int argc, char **argv)
                 break;
         }
 
-        if (loramac.link_chk.available) {
-            printf("Link check information:\n - Demodulation margin: %d\n  - Number of gateways: %d\n",
-                   loramac.link_chk.demod_margin,
-                   loramac.link_chk.nb_gateways);
-        }
 	}
     return 0;
 }
-	
-
-static const shell_command_t shell_commands[] = {
-    { "loramac_data", "control the loramac stack", _cmd_loramac_data_transmission },
-    { NULL, NULL, NULL }
-};
 
 int main(void)
 {
@@ -143,7 +135,5 @@ int main(void)
     }
 
     puts("Join procedure succeeded");
-    puts("All up, running the shell now");
-    char line_buf[SHELL_DEFAULT_BUFSIZE];
-    shell_run(shell_commands, line_buf, SHELL_DEFAULT_BUFSIZE);
+    loramac_data_transmission();
 }
