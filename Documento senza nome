@@ -1,0 +1,35 @@
+iotlab-auth -u <login> 
+iotlab-experiment submit -n riot_ttn -d 60 -l 2,archi=st-lrwan1:sx1276+site=saclay
+
+iotlab-experiment get -i <exp_id> -s
+iotlab-experiment get -i <exp_id> -r
+
+export PATH=/opt/gcc-arm-none-eabi-7-2018-q2-update/bin:$PATH
+
+
+BUILD LoRaWAN -->  make -C tests/pkg_semtech-loramac clean all
+
+FLASH LORAWAN NODE->
+	iotlab-node --update tests/pkg_semtech-loramac/bin/b-l072z-lrwan1/tests_pkg_semtech-loramac.elf 
+-l saclay,st-lrwan1,1
+
+ ACCESS TO RIOT SHELL OF NODE : nc st-lrwan1-1 20000
+
+
+
+------------------------------------------------------------------------
+ST 1
+
+> loramac set deveui 00B6C690C2F84E4F
+> loramac set appeui 70B3D57ED002D6D1
+> loramac set appkey 2528EB9188D2418013C7A2A20A647F15
+> loramac set dr 5
+> loramac join otaa
+
+ST 2 
+
+> loramac set deveui 0095E2B07D00AD7B
+> loramac set appeui 70B3D57ED002D6D1
+> loramac set appkey 81B2D08159EC2FEEAC1974775850B23B
+> loramac set dr 5
+> loramac join otaa
