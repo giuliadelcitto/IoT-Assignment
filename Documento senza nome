@@ -11,8 +11,7 @@ BUILD LoRaWAN -->make -C RIOT_app/pkg_semtech-loramac/station1 clean all
 
 
 FLASH LORAWAN NODE->
-	iotlab-node --update RIOT_app/pkg_semtech-loramac/station1/bin/b-l072z-lrwan1/loramac.elf 
-	-l saclay,st-lrwan1,17
+	iotlab-node --update RIOT_app/pkg_semtech-loramac/station1/bin/b-l072z-lrwan1/loramac.elf -l saclay,st-lrwan1,17
 
  ACCESS TO RIOT SHELL OF NODE : nc st-lrwan1-1 20000
 
