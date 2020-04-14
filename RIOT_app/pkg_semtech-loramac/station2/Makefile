@@ -1,0 +1,21 @@
+APPLICATION= loramac
+BOARD ?= b-l072z-lrwan1
+
+LORA_DRIVER ?= sx1276
+LORA_REGION ?= EU868
+
+USEPKG += semtech-loramac
+USEMODULE += $(LORA_DRIVER)
+
+USEMODULE += shell
+USEMODULE += shell_commands
+USEMODULE += fmt
+
+FEATURES_OPTIONAL += periph_eeprom
+
+CFLAGS += -DREGION_$(LORA_REGION)
+CFLAGS += -DLORAMAC_ACTIVE_REGION=LORAMAC_REGION_$(LORA_REGION)
+
+RIOTBASE ?= $(CURDIR)/../../../RIOT
+
+include $(RIOTBASE)/Makefile.include
