@@ -68,7 +68,7 @@ int loramac_data_transmission(void)
 		//argv[2] is the msg  payload
 		data_gen(data_sens);
 		
-        switch (semtech_loramac_send( &loramac, (uint8_t *)data_sens, data_sens) )) {
+        switch (semtech_loramac_send( &loramac, (uint8_t *)data_sens, strlen(data_sens) )) {
             case SEMTECH_LORAMAC_NOT_JOINED:
                 puts("Cannot send: not joined");
                 return 1;
