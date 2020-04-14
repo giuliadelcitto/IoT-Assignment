@@ -7,11 +7,12 @@ iotlab-experiment get -i <exp_id> -r
 export PATH=/opt/gcc-arm-none-eabi-7-2018-q2-update/bin:$PATH
 
 
-BUILD LoRaWAN -->  make -C tests/pkg_semtech-loramac clean all
+BUILD LoRaWAN -->make -C RIOT_app/pkg_semtech-loramac/station1 clean all
+
 
 FLASH LORAWAN NODE->
-	iotlab-node --update tests/pkg_semtech-loramac/bin/b-l072z-lrwan1/tests_pkg_semtech-loramac.elf 
--l saclay,st-lrwan1,1
+	iotlab-node --update RIOT_app/pkg_semtech-loramac/station1/bin/b-l072z-lrwan1/loramac.elf 
+	-l saclay,st-lrwan1,17
 
  ACCESS TO RIOT SHELL OF NODE : nc st-lrwan1-1 20000
 
