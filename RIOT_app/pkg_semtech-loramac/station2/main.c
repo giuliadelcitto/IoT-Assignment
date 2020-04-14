@@ -50,11 +50,10 @@ int data_gen(char* data_sens)
 	return 0;
 }
 
-static int loramac_data_transmission(int argc, char **argv)
+static int loramac_data_transmission()
 {
-	 if (argc < 2) {
-		printf("start function");
-	}
+	 
+	printf("start function");
 	
 	while (1){
 		xtimer_sleep(10)
@@ -65,11 +64,10 @@ static int loramac_data_transmission(int argc, char **argv)
 		semtech_loramac_set_tx_port(&loramac, port);
 
 		char data_sens[128];
-		//argv[2] is the msg  payload
-		data_gen(data_sens);
-		argv[2]=data_sens;
 		
-        switch (semtech_loramac_send( &loramac, (uint8_t *)argv[2], strlen(argv[2]) )) {
+		data_gen(data_sens);
+		
+        switch (semtech_loramac_send( &loramac, (uint8_t *)data_sens, strlen(data_sens) )) {
             case SEMTECH_LORAMAC_NOT_JOINED:
                 puts("Cannot send: not joined");
                 return 1;
