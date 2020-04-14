@@ -57,7 +57,7 @@ static int loramac_data_transmission()
 	printf("start function");
 	
 	while (1){
-		xtimer_sleep(10)
+		xtimer_sleep(10);
 		uint8_t cnf = LORAMAC_DEFAULT_TX_MODE;  /* Default: confirmable */
 		uint8_t port = LORAMAC_DEFAULT_TX_PORT; /* Default: 2 */
 
