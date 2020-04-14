@@ -50,7 +50,7 @@ int data_gen(char* data_sens)
 	return 0;
 }
 
-static int loramac_data_transmission()
+int loramac_data_transmission(void)
 {
 	 
 	printf("start function");
