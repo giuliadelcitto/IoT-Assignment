@@ -3,7 +3,6 @@ import json
 import time
 #check the connection 
 def on_connect(client, userdata, flags, rc):
-	print("in on connect tb")
 	if rc==0:
 		client.connected_flag=True #set flag
 		print("connected OK")
@@ -20,10 +19,10 @@ def tb_send(dev_id, dev_msg):
 	
 	if (dev_id=="environmental_station_1"):
 		id_client="z5hKTq8bjwvBqGIr5bw3"
-		print("connect to 1\n")
+		print("message for dev1\n")
 	else:
 		id_client="0P4MFpOyGlXQKlusWN14"
-		print("connect to 2\n")
+		print("message for dev2\n")
 	passwrd=""
 		
 	mqtt.Client.connected_flag=False
@@ -32,18 +31,13 @@ def tb_send(dev_id, dev_msg):
 		client = mqtt.Client()
 		client.username_pw_set(id_client, passwrd)
 	
-	print("id_client OK\n")
-	
 	#connection and check
 	client.connect(broker, port)
-	print("post client.connect")
 	client.on_connect=on_connect
 	
 	while not client.connected_flag :
 		client.loop()
 		time.sleep(2)
-		
-	print("connection finish\n")
 	
 	client.publish(topic, dev_msg ,0)
 	print("data publish ok\n ")
@@ -51,22 +45,19 @@ def tb_send(dev_id, dev_msg):
 	print("client disconnect\n")
 
 def on_connect_ttn(client, userdata, flags, rc):
-    print("Connected with result code "+str(rc))
-
+    print("Connected to ttn with result code "+str(rc))
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
     client.subscribe("+/devices/+/up")
-    print("subscribe ok")
+    print("subscribe on ttn\n")
 	
 # The callback for when a PUBLISH message is received from the server.
 def on_message_ttn(client, userdata, msg):
 	msg=msg.payload
 	print(msg)
-	print("\n---------->FINE PAYLOAD\n")
+	print("\n")
 	#json become dictionary
 	json_data=json.loads(msg)
-	print("ok json.load\n")
-	
 	device_id=json_data["dev_id"]
 	msg_payload=json_data["payload_fields"]["msg"]
 	
@@ -77,6 +68,7 @@ def on_message_ttn(client, userdata, msg):
 	data_out=json.dumps({key[0]:data[0],key[1]:data[1],key[2]:data[2],key[3]:data[3],key[4]:data[4]})
 		
 	print(data_out)
+	print("\n")
 	tb_send(device_id, data_out)
 	
 
