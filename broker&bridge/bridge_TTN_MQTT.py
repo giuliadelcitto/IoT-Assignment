@@ -54,7 +54,7 @@ def on_connect_ttn(client, userdata, flags, rc):
 # The callback for when a PUBLISH message is received from the server.
 def on_message_ttn(client, userdata, msg):
 	msg=msg.payload
-	print(msg)
+	#print(msg)
 	print("\n")
 	#json become dictionary
 	json_data=json.loads(msg)
