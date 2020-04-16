@@ -37,7 +37,7 @@ static const uint8_t appkey[LORAMAC_APPKEY_LEN] = { 0x25, 0x28, 0xEB, 0x91, 0x88
 
 int data_gen(char* data_sens)
 {
-	srand(time(0));
+	srand(50);
 	static int data[5];
 	data[0]= (rand() % 51) - (rand() % 51);
 	data[1]= rand() % 101;
