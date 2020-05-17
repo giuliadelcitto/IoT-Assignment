@@ -1,0 +1,35 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="button.css">
+	<script src="rest.js" type="text/javascript"></script>
+	<script src="walkornot.js" type="text/javascript"></script>
+	<title>Prova sensori</title>
+	<meta charset="utf-8">
+	<meta name="description" content="The HTML5 Herald">
+	<meta name="author" content="SitePoint">
+
+</head>
+
+<body style="background: #CCE6FF">
+	<h1 style="position:absolute; top:2%; left:25%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:50px;"> SENSOR DATA </h1>
+	
+	<div style="position:absolute; top:15%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:20px;"> Accelerometer data: </div>
+	<div id='status' style="position:absolute; top:18%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:20px;"> No data from sensor </div>
+	<div style="position:absolute; top:22%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:20px;"> Activity: </div>
+	<div id='status_act' style="position:absolute; top:25%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:20px;"> No activity detect </div>
+	<button style="position:absolute; top:30%; left:8%" class="Button" onclick="getdata()"> Start get data </button>
+	<button style="position:absolute; top:30%; left:35%" class="Button" onclick="stop()"> Stop get data </button>
+	
+	
+	<div style="position:absolute; top:45%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:20px;">
+		<p>Connection State </p>
+		<div id ='send_d'> No data send </div>
+		<div id ='send_a'> No activity send</div>
+		<button class="Button" onclick="sending_data()">Send Data </button>
+		<button class="Button" onclick="sending_act()">Send Activity </button>
+		<button class="Button" onclick="stop_send()"> Stop send </button>
+	</div>
+</body>
+</html>

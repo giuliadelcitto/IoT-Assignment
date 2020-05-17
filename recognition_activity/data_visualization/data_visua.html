@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="button.css">
+</head>
+<body style="background: #CCE6FF">
+	
+	<h1 style="position:absolute; top:1%; left:35%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:50px;">ACTIVITY RECOGNITION </h1>
+	<h1 id="sub_tit" style="position:absolute; top:13%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484">Click one button</h1>
+	
+	<div id="a" style="display: block">
+		<div style="position:absolute; top:20%; left:60%">
+			<iframe  style="position:absolute; width: 600px; height:350px; pointer-events: none" src="https://demo.thingsboard.io:/dashboard/d16276a0-9853-11ea-9c5c-efab5276a98f?publicId=78547990-6c35-11ea-ad02-b3576b7d39f1"> </iframe>
+		</div>
+		<div style="position:absolute; top:20%; left:8%">
+			<iframe  id="t" style="position:relative; width:900px; height:600px" src="https://demo.thingsboard.io:/dashboard/4b4191b0-9852-11ea-9c5c-efab5276a98f?publicId=78547990-6c35-11ea-ad02-b3576b7d39f1"> </iframe>
+		</div>
+		<div style="position:absolute; top:63%; left:60%; width:27%" >
+			<h1 style="font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:18px;">In the box above is showed the last user activity detected, in the box on the left are showed the user activities detected during the last hour.<br>
+			The activity recognition model is deployed in the smartphone, to see the model deployed in the cloud click on "Detected activity and sensor value".</h1>
+		</div>
+	</div>
+	
+	<div id="b"  style="display: none">
+		<div  style="position:absolute; top:20%; left:60%">
+			<iframe  style="position:absolute; width: 600px; height:350px; pointer-events: none" src="https://demo.thingsboard.io:/dashboard/19910070-986a-11ea-9c5c-efab5276a98f?publicId=78547990-6c35-11ea-ad02-b3576b7d39f1"> </iframe>
+		</div>
+		<div style="position:absolute; top:20%; left:8%">
+			<iframe  id="t" style="position:relative; width:900px; height:600px" src="https://demo.thingsboard.io:/dashboard/fcd59d20-9868-11ea-9c5c-efab5276a98f?publicId=78547990-6c35-11ea-ad02-b3576b7d39f1"> </iframe>
+		</div>
+		<div style="position:absolute; top:63%; left:60%; width:27%" >
+			<h1 style="font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:18px;">In the box above are showed the last value and user activity detected, in the box on the left are showed the values and the user activities detected during the last hour.<br>
+			The activity recognition model is deployed in the cloud, to see the model deployed in the smartphone click on "Detected activity".</h1>
+		</div>
+	</div>	
+	
+	
+	
+	<div style = "position:absolute; top:87%; left:30% ">
+		<button  id="act" href="prova.css" class="Button" onclick="hide_show(this.id)" >Detected activity</button>
+		<button  id="act_sens" href="prova.css" class="Button" onclick="hide_show(this.id)" >Detected activity and sensor value</button>
+	</div>
+	
+	<script>
+		function hide_show(id) {
+		  var e1 = document.getElementById("a");
+		  var e2 = document.getElementById("b");
+		  if (id === "act") {
+			e1.style.display = "block";
+			e2.style.display = "none";
+			document.getElementById("sub_tit").innerHTML = "Detected activity";
+			
+		  } else {
+			e2.style.display = "block";
+			e1.style.display = "none";
+			document.getElementById("sub_tit").innerHTML = "Detected activity and sensor value";
+		  }
+		}		
+	</script>	
+	
+	
+
+</body>
+</html> 

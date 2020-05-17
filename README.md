@@ -2,22 +2,22 @@ FOLDER ORAGANIZATION
 
 RIOT_app :
 
-	-> emcute_mqttsn : file for the Riot application of the ASSIGNMENT2
-	-> pkg_semtech-loramac : folder with the Riot application for 2 different station that use lorawan (ASSIGNMENT3)
+-> emcute_mqttsn : file for the Riot application of the ASSIGNMENT2
+-> pkg_semtech-loramac : folder with the Riot application for 2 different station that use lorawan (ASSIGNMENT3)
 
 Broker&bridge :
 
-	-> mosquitto.rsmb: boker for MQTT-sn (ASSIGNMENT2)
-	-> bridge MQTT-sn MQTT (ASSIGNMENT2)
-	-> bridge TTN MQTT (ASSIGNMENT3)
+-> mosquitto.rsmb: boker for MQTT-sn (ASSIGNMENT2)
+-> bridge MQTT-sn MQTT (ASSIGNMENT2)
+-> bridge TTN MQTT (ASSIGNMENT3)
 
 python_stations : 
 
-	-> python program that simulate 2 environmental stations
+-> python program that simulate 2 environmental stations
 	
 web_app:
 	
-	-> html and css file for the data visualization
+-> html and css file for the data visualization
 	
 	
 	
