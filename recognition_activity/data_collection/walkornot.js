@@ -31,7 +31,7 @@ function getdata(){
 			activity="walking";
 			document.getElementById('status_act').innerHTML = activity;
 		}else{
-			activity="stanning";
+			activity="standing";
 			document.getElementById('status_act').innerHTML = activity;
 		}
 		
