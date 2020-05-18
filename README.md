@@ -35,7 +35,7 @@ All information about how run the system are available in the STEP 5 of the blog
 
 #### Blog Post: https://www.linkedin.com/pulse/how-connect-riot-os-cloud-based-iot-using-lorawan-giulia-del-citto
 
-#### Video: https: https://www.youtube.com/watch?v=
+#### Video: https://www.youtube.com/watch?v=
 
 
 
