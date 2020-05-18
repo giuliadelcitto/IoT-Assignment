@@ -1,4 +1,4 @@
-## FOLDER ORAGANIZATION 
+## Folder Organization
 
 ##### RIOT_app :
 	- emcute_mqttsn : file for the Riot application of the ASSIGNMENT2
@@ -15,13 +15,21 @@
 ##### web_app:
 	- html and css file for the data visualization
 
-##### recognition activity:
+##### recognition_activity:
 	- data_collection: javascript files to collect data and detect te activity (ASSIGNMENT4)
 	- data_visualization: html page to visualize data and activity (ASSIGNMENT 4)
 	
-	
-	
-## ASSIGNMENT 3
+## Assignment 4	
+The HTML5 page is available at this link: https://giuliadelcitto.github.io/IoT-Assignment/
+Open the link from the smartphone and use the button to get data and send data and activity to Thingsboard.
+Open [recognition_activity/data_visualization/data_visua.html] to visualize all data.
+
+#### Blog Post:
+
+#### Video: 
+
+
+## Assignment 3
 
 All information about how run the system are available in the STEP 5 of the blog post.
 
@@ -31,7 +39,7 @@ All information about how run the system are available in the STEP 5 of the blog
 
 
 
-## ASSIGNMENT 2
+## Assignment 2
 
 For the RIOT and brocker you can find more information in the Readme in the riot folder and in the mosquitto.rsmb.
 
@@ -45,7 +53,7 @@ The running instruction are available in the blog post and in the video.
 
 
 
-## ASSIGNMENT 1
+## Assignment 1
 
 #### Blog Post: https://www.linkedin.com/pulse/virtual-environmental-station-giulia-del-citto
 
