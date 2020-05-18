@@ -7,7 +7,7 @@
 	
 	<h1 style="position:absolute; top:1%; left:35%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:50px;">ACTIVITY RECOGNITION </h1>
 	<h1 id="sub_tit" style="position:absolute; top:13%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484">Click one button</h1>
-	
+	<!-- In the div are display the thingsboard dashboards-->
 	<div id="a" style="display: block">
 		<div style="position:absolute; top:20%; left:60%">
 			<iframe  style="position:absolute; width: 600px; height:350px; pointer-events: none" src="https://demo.thingsboard.io:/dashboard/d16276a0-9853-11ea-9c5c-efab5276a98f?publicId=78547990-6c35-11ea-ad02-b3576b7d39f1"> </iframe>
@@ -42,6 +42,7 @@
 	</div>
 	
 	<script>
+		//the button change the dashboard display
 		function hide_show(id) {
 		  var e1 = document.getElementById("a");
 		  var e2 = document.getElementById("b");
