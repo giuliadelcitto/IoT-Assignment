@@ -3,12 +3,12 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="recognition_activity/data_collection/button.css">
+	<!-- import javascript file -->
 	<script src="recognition_activity/data_collection/rest.js" type="text/javascript"></script>
 	<script src="recognition_activity/data_collection/walkornot.js" type="text/javascript"></script>
+	
 	<title>Sensor</title>
 	<meta charset="utf-8">
-	<meta name="description" content="The HTML5 Herald">
-	<meta name="author" content="SitePoint">
 
 </head>
 
@@ -19,7 +19,9 @@
 	<div id='status' style="position:absolute; top:18%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:20px;"> No data from sensor </div>
 	<div style="position:absolute; top:22%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:20px;"> Activity: </div>
 	<div id='status_act' style="position:absolute; top:25%; left:8%; font-family: Courier; font-weight:bold; font-style:italic; color:#2E6484; font-size:20px;"> No activity detect </div>
+	<!-- start the sensor reading-->
 	<button style="position:absolute; top:30%; left:8%" class="Button" onclick="getdata()"> Start get data </button>
+	<!-- stop the sensor reading -->
 	<button style="position:absolute; top:30%; left:35%" class="Button" onclick="stop()"> Stop get data </button>
 	
 	
@@ -27,8 +29,11 @@
 		<p>Connection State </p>
 		<div id ='send_d'> No data send </div>
 		<div id ='send_a'> No activity send</div>
+		<!-- change the div content to start send only sensor data-->
 		<button class="Button" onclick="sending_data()">Send Data </button>
+		<!-- change the div content to start send only activity detected-->
 		<button class="Button" onclick="sending_act()">Send Activity </button>
+		<!-- change the div content to stop send all data -->
 		<button class="Button" onclick="stop_send()"> Stop send </button>
 	</div>
 </body>
