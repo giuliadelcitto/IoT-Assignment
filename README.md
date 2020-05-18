@@ -22,7 +22,7 @@
 ## Assignment 4	
 The HTML5 page is available at this link: https://giuliadelcitto.github.io/IoT-Assignment/
 Open the link from the smartphone and use the button to get data and send data and activity to Thingsboard.
-Open [recognition_activity/data_visualization/data_visua.html] to visualize all data.
+Open [this file](recognition_activity/data_visualization/data_visua.html) to visualize all data.
 
 #### Blog Post:
 
