@@ -24,9 +24,8 @@ The HTML5 page is available at this link: https://giuliadelcitto.github.io/IoT-A
 Open the link from the smartphone and use the button to get data and send data and activity to Thingsboard.
 Open [this file](recognition_activity/data_visualization/data_visua.html) to visualize all data.
 
-#### Blog Post:
-
-#### Video: 
+#### Blog Post: https://www.linkedin.com/pulse/how-detect-user-activity-using-smartphone-sensors-giulia-del-citto
+#### Video:  https://www.youtube.com/watch?v=9GL65S8s-V8
 
 
 ## Assignment 3
