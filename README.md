@@ -18,6 +18,9 @@
 ##### recognition_activity:
 	- data_collection: javascript files to collect data and detect te activity (ASSIGNMENT4)
 	- data_visualization: html page to visualize data and activity (ASSIGNMENT 4)
+
+#### index.html : 
+	web page to get data from sensor for the 4 assignment
 	
 ## Assignment 4	
 The HTML5 page is available at this link: https://giuliadelcitto.github.io/IoT-Assignment/
